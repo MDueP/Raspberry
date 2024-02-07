@@ -1,0 +1,3 @@
+Lav Python program der opretter database
+Programmet skal .read fra en sql fil DHT laver
+DHT skal lave en SQl fil i stedet for print()
