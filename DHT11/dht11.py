@@ -11,7 +11,8 @@ serverSocket = socket(AF_INET, SOCK_DGRAM)
 modtagerport = 12000
 modtageraddr = ""
 while HUMIDITY is not None and TEMPERATURE is not None:
-    #Vigtigt den er inde i loopet, ellers bliver tiden ikke opdateret:
+    #Vigtigt de er inde i loopet, ellers bliver de ikke opdateret:
+    HUMIDITY, TEMPERATURE = Adafruit_DHT.read_retry(sensor, pin)
     data = (datetime.datetime.now(), TEMPERATURE, HUMIDITY)
     try:
         conn = sqlite3.connect('dht11.db')
